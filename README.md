@@ -72,37 +72,27 @@ After Importing the dataset, Just check the shape. So that we can get an idea of
 
 **Now Perform the EDA.**
 
-First we need to change the variable name as per naming convention
-
-- names can be of any length
-
-- always starts with letters
-
-- should not start with a number or special characters.
-
-- should not have spaces or any special characters except underscore.
-
-We can use this code to change the variable name
+- First we need to change the variable name as per naming convention
 
 LoansData.columns = [i.replace('.','_') for i in LoansData.columns]
 
 **Performing necessary Datatype Conversions**
 
-LoansData['Debt_To_Income_Ratio']= LoansData['Debt_To_Income_Ratio'].str.replace('%','').astype('float')
+LoansData['Debt_To_Income_Ratio']=LoansData['Debt_To_Income_Ratio'].str.replace('%','').astype('float')
 
-LoansData['Employment_Length'] = LoansData['Employment_Length'].str.replace('years','').str.replace('year','').str.replace('<','').str.replace('+','').astype('float')
+LoansData['Employment_Length']=LoansData['Employment_Length'].str.replace('years','').str.replace('year','').str.replace('<','').str.replace('+','').astype('float')
 
-LoansData['Interest_Rate'] = LoansData['Interest_Rate'].str.replace('%','').astype('float')
+LoansData['Interest_Rate']=LoansData['Interest_Rate'].str.replace('%','').astype('float')
 
-LoansData['Loan_Length'] = LoansData['Loan_Length'].str.replace('months','').astype('float')
+LoansData['Loan_Length']=LoansData['Loan_Length'].str.replace('months','').astype('float')
 
-LoansData['FICO_Range'] = LoansData['FICO_Range'].str.split('-',expand = True)[0].astype('float')
+LoansData['FICO_Range']=LoansData['FICO_Range'].str.split('-',expand = True)[0].astype('float')
 
 We have done all the necessary changes in our DataFrame
 
 ![image](https://github.com/Swagath123Koyada/EDA_on_LoansData/assets/164196153/cb3170d1-7ef4-4310-8464-a2cd6491d67c)
 
-**Now check the Distribution of customers by loan lengths**
+### Now check the Distribution of customers by loan lengths
 
 print(LoansData['Loan_Length'].value_counts())
 
@@ -116,7 +106,9 @@ plt.ylabel("No of customers")
 
 ![image](https://github.com/Swagath123Koyada/EDA_on_LoansData/assets/164196153/60a79fc8-5b68-4c38-a06a-54b934f8bf09)
 
-**Check the Distribution of customers by State**
+**1952 Customers has chosen the loan length of 36.0**
+
+### Check the Distribution of customers by State
 
 print(LoansData['State'].value_counts())
 
@@ -130,7 +122,9 @@ plt.ylabel("No of customers")
 
 ![image](https://github.com/Swagath123Koyada/EDA_on_LoansData/assets/164196153/c652aa3e-9692-44a1-b305-22ef52edf270)
 
-**Distribution of customers by loan purpose**
+**CA State has the most number of Customers of 433**
+
+### Distribution of customers by loan purpose
 
 print(LoansData['Loan_Purpose'].value_counts())
 
@@ -144,22 +138,57 @@ plt.ylabel("No of customers")
 
 ![image](https://github.com/Swagath123Koyada/EDA_on_LoansData/assets/164196153/7f0baf9f-0b16-44e9-868e-55af065cf09d)
 
+**1307 Customers has the loan purpose of debt_consolidation**
 
+### Distribution of customers by Home ownership
 
+print(LoansData['Home_Ownership'].value_counts())
 
+LoansData['Home_Ownership'].value_counts().plot(kind = 'bar',color = 'Maroon',figsize = (8,5))
 
+plt.title("Distribution of customers by their Home_Ownership.")
 
+plt.xlabel("Home_Ownership")
 
+plt.ylabel("No of customers")
 
+![image](https://github.com/Swagath123Koyada/EDA_on_LoansData/assets/164196153/399c7ca4-c1e4-4618-9257-5e0c19b1489d)
 
+**Most of the Customers has a Home Ownership of Mortgage and Rent**
 
+### Distribution of Employment Length by their loan lengths
 
+print(LoansData['Loan_Length'].value_counts())
 
+LoansData['Loan_Length'].value_counts().plot(kind = 'line',color = 'black',figsize = (8,5))
 
+plt.title("Distribution of Employment.Length by their loan lengths.")
 
+plt.xlabel("Loan length")
 
+plt.ylabel("Employment.Length")
 
+![image](https://github.com/Swagath123Koyada/EDA_on_LoansData/assets/164196153/2a43f54d-d5ae-495c-9f50-f262be69f7dc)
 
+**Most of the Cuatomers has a Loan Length of 36 months.**
+
+### Amount Requested compared to the corresponding Interest Rate
+
+plt.scatter(LoansData['Amount_Requested'],LoansData['Interest_Rate'])
+
+plt.title("Comparison of Amount Requested and Interest Rate")
+
+plt.xlabel('Amount_Requested')
+
+plt.ylabel('Interest_Rate')
+
+plt.colorbar()
+
+plt.show()
+
+![image](https://github.com/Swagath123Koyada/EDA_on_LoansData/assets/164196153/791dc0d9-89db-4f4c-84bb-5b5fb314d9d2)
+
+**Most of the Customers has requested the amount of upto  10000−15000 and the Interest Rate being 5.0-17.5**
 
 
 
