@@ -30,7 +30,7 @@ This project involves conducting exploratory data analysis (EDA) on a dataset co
 
 ### Tool Used : Jupyter Notebook
 
-## Key Steps
+### Key Steps
 
 **Data Import:** Utilize Python libraries such as pandas to import the dataset into a Jupyter Notebook for analysis.
 
