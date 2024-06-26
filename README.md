@@ -190,17 +190,23 @@ plt.show()
 
 **Most of the Customers has requested the amount of upto  10000−15000 and the Interest Rate being 5.0-17.5**
 
+## Interest_Rate Distribution through Histogram
 
+plt.hist(LoansData['Interest_Rate'],color='green')
 
+plt.title('Interest_Rate')
 
+plt.show()
 
+![image](https://github.com/Swagath123Koyada/EDA_on_LoansData/assets/164196153/a814b43b-26cb-41ad-9f85-9f9550b6781c)
 
+## Debt_to_Income_Ratio Distribution through Histogram
 
+![image](https://github.com/Swagath123Koyada/EDA_on_LoansData/assets/164196153/f2993219-3274-481b-a813-c982cea74ac5)
 
+The following histogram represents the distribution of the Debt_to_Income_Ratio for a given dataset. This metric is crucial for understanding the financial health of individuals or entities within the dataset.
 
-
-
-
+The most frequent debt-to-income ratio is around 15%, indicating this is the most common ratio in the dataset.
 
 
 
