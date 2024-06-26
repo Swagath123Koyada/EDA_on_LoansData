@@ -354,7 +354,65 @@ Num_Data.apply(outlier_IQR)
 
 ![image](https://github.com/Swagath123Koyada/EDA_on_LoansData/assets/164196153/e07fb93e-3ed2-4b42-8275-79a62e20b255)
 
-### 
+### Amount Requested
+
+Num_Data['Amount_Requested'] = Num_Data.Amount_Requested.clip(lower = -10500.00, upper = 33500)
+
+sns.boxplot(Num_Data.Amount_Requested)
+
+![image](https://github.com/Swagath123Koyada/EDA_on_LoansData/assets/164196153/7d5af6f0-fe99-423c-abc8-ccf236b87650)
+
+### Amount_Funded_By_Investors
+
+Num_Data['Amount_Funded_By_Investors'] = Num_Data.Amount_Funded_By_Investors.clip(lower = -9000, upper = 31000)
+
+sns.boxplot(Num_Data.Amount_Requested)
+
+![image](https://github.com/Swagath123Koyada/EDA_on_LoansData/assets/164196153/ffeae620-62d0-4e30-b28f-6b8bbe3f989e)
+
+### Interest Rate
+
+Num_Data['Interest Rate'] = Num_Data.Interest_Rate.clip(lower = 1.70, upper = 24.26)
+
+sns.boxplot(Num_Data.Interest_Rate)
+
+![image](https://github.com/Swagath123Koyada/EDA_on_LoansData/assets/164196153/b30a7381-f8b3-4f88-8212-5fb94b1cee57)
+
+### FICO_Range
+
+Num_Data['FICO_Range'] = Num_Data.FICO_Range.clip(lower = 612.5, upper = 792.5)
+
+sns.boxplot(Num_Data.FICO_Range)
+
+![image](https://github.com/Swagath123Koyada/EDA_on_LoansData/assets/164196153/e55beb6e-022a-478c-9ae6-497adb35863d)
+
+### Open_CREDIT_Lines
+
+Num_Data['Open_CREDIT_Lines'] = Num_Data.Open_CREDIT_Lines.clip(lower = -2.0, upper = 22.0)
+
+sns.boxplot(Num_Data.Open_CREDIT_Lines)
+
+![image](https://github.com/Swagath123Koyada/EDA_on_LoansData/assets/164196153/46d0145a-d1ed-4241-82f2-8cbe0d044110)
+
+### Inquiries_in_the_Last_6_Months
+
+Num_Data['Inquiries_in_the_Last_6_Months'] = Num_Data.Inquiries_in_the_Last_6_Months.clip(lower = -1.5, upper = 2.5)
+
+sns.boxplot(Num_Data.Inquiries_in_the_Last_6_Months)
+
+![image](https://github.com/Swagath123Koyada/EDA_on_LoansData/assets/164196153/5f20e02c-caa0-4288-ba25-19fea94fc6a6)
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
